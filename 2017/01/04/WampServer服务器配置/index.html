@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>WampServer服务器配置 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一、下载wampserver，正常安装（如：安装在D盘下）二、You don’t have permission to access / on this server. 没权限解决方案:
+
+打开D:\wamp\bin\apache\Apache2.2.21\conf\httpd.conf
+按ctrl+f 搜索documentRoot  大概188行左右的位置  directory标签添加 Allo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WampServer服务器配置">
+<meta property="og:url" content="http://yoursite.com/2017/01/04/WampServer服务器配置/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一、下载wampserver，正常安装（如：安装在D盘下）二、You don’t have permission to access / on this server. 没权限解决方案:
+
+打开D:\wamp\bin\apache\Apache2.2.21\conf\httpd.conf
+按ctrl+f 搜索documentRoot  大概188行左右的位置  directory标签添加 Allo">
+<meta property="og:updated_time" content="2017-01-04T14:23:09.149Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="WampServer服务器配置">
+<meta name="twitter:description" content="一、下载wampserver，正常安装（如：安装在D盘下）二、You don’t have permission to access / on this server. 没权限解决方案:
+
+打开D:\wamp\bin\apache\Apache2.2.21\conf\httpd.conf
+按ctrl+f 搜索documentRoot  大概188行左右的位置  directory标签添加 Allo">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-WampServer服务器配置" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/01/04/WampServer服务器配置/" class="article-date">
+  <time datetime="2017-01-04T14:22:24.000Z" itemprop="datePublished">2017-01-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      WampServer服务器配置
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、下载wampserver，正常安装（如：安装在D盘下）"><a href="#一、下载wampserver，正常安装（如：安装在D盘下）" class="headerlink" title="一、下载wampserver，正常安装（如：安装在D盘下）"></a>一、下载wampserver，正常安装（如：安装在D盘下）</h2><h2 id="二、You-don’t-have-permission-to-access-on-this-server-没权限"><a href="#二、You-don’t-have-permission-to-access-on-this-server-没权限" class="headerlink" title="二、You don’t have permission to access / on this server. 没权限"></a>二、You don’t have permission to access / on this server. 没权限</h2><p>解决方案:</p>
+<ol>
+<li>打开D:\wamp\bin\apache\Apache2.2.21\conf\httpd.conf</li>
+<li>按ctrl+f 搜索documentRoot  大概188行左右的位置  directory标签添加 Allow from  all</li>
+<li>大概232行 Allow from 127.0.0.1  改成all</li>
+<li>重启服务器</li>
+</ol>
+<h2 id="三、如何配置网站根目录"><a href="#三、如何配置网站根目录" class="headerlink" title="三、如何配置网站根目录"></a>三、如何配置网站根目录</h2><p>解决方案:</p>
+<ol>
+<li>打开D:\wamp\bin\apache\Apache2.2.21\conf\httpd.conf</li>
+<li>找到178行DocumentRoot “D:/wamp/www/“更改路径</li>
+<li>找到206行<directory "d:="" wamp="" www="" "="">更改路径</directory></li>
+<li>保存，重启服务器</li>
+</ol>
+<h2 id="四、如何配置虚拟主机"><a href="#四、如何配置虚拟主机" class="headerlink" title="四、如何配置虚拟主机"></a>四、如何配置虚拟主机</h2><p>解决方案：</p>
+<ol>
+<li>打开D:\wamp\bin\apache\Apache2.2.21\conf\httpd.conf</li>
+<li>搜索Virtual hosts 找到第467行 会看到一个路径</li>
+<li>根据路径找到一个文件打开conf/extra/httpd-vhosts.conf</li>
+<li>更改DocumentRoot为网站的根目录</li>
+<li>更改ServerName  baidu.com</li>
+<li>打开hosts文件  C:\Windows\System32\drivers\etc</li>
+<li>写成 127.0.0.1 www.study.com  127.0.0.1 study.com</li>
+<li>保存</li>
+<li>重新启动服务器</li>
+</ol>
+<h2 id="五、配置反向代理"><a href="#五、配置反向代理" class="headerlink" title="五、配置反向代理"></a>五、配置反向代理</h2><ol>
+<li>打开D:\wamp\bin\apache\Apache2.2.21\conf\httpd.conf文件</li>
+<li>打开其中的proxy_module和proxy_http_module服务 </li>
+<li>打开conf/extra/httpd-vhosts.conf文件</li>
+<li>在指定的根目录下添加ProxyRequests Off和ProxyPass /api <a href="http://api.botue.com（其中http://api.botue.com为反向代理服务器）" target="_blank" rel="external">http://api.botue.com（其中http://api.botue.com为反向代理服务器）</a></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/01/04/WampServer服务器配置/" data-id="cixj1avmz00004kahqg6bkgjv" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/01/04/前端模块化/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">前端模块化</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/01/04/WampServer服务器配置/">WampServer服务器配置</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/04/前端模块化/">前端模块化</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/04/第二篇/">第二篇</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/04/我的博客/">我的博客</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/04/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
