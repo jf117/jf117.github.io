@@ -27,7 +27,7 @@ nodejs是运行在服务端的js，它是按着COMMONJS的规范实现的模块�
 js在浏览器端本身是不具备模块化的技术的，需要自己进行封装来实现模块定义以及加载，其实现遵照一定的规范（COMMOMJS）
 nodejs是运行在服务端的js，它是按着COMMONJS的规范实现的模块化
 经实践发现，浏览器端js按着COMMONJS的规范实现模块化，有很多不足，此时，就有">
-<meta property="og:updated_time" content="2017-01-04T13:44:40.426Z">
+<meta property="og:updated_time" content="2017-01-04T13:50:00.385Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端模块化">
 <meta name="twitter:description" content="前端模块化为什么要前端模块化
@@ -76,9 +76,9 @@ nodejs是运行在服务端的js，它是按着COMMONJS的规范实现的模块�
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -145,17 +145,16 @@ nodejs是运行在服务端的js，它是按着COMMONJS的规范实现的模块�
 <li>依赖注入</li>
 </ul>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"./libs/require.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">    <span class="built_in">require</span>([<span class="string">'./libs/main(js文件)'</span>], <span class="function"><span class="keyword">function</span>(<span class="params">main</span>)</span>&#123;</div><div class="line">        <span class="comment">//回调函数</span></div><div class="line">    &#125;)</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>###入口文件<br>通过为引入require的标签加入data-main属性，其属性值为某一个模块的路径，此模块可以自动被加载并执行</p>
+<h3 id="入口文件"><a href="#入口文件" class="headerlink" title="入口文件"></a>入口文件</h3><p>通过为引入require的标签加入data-main属性，其属性值为某一个模块的路径，此模块可以自动被加载并执行</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"./libs/require.js"</span> <span class="attr">data-main</span>=<span class="string">"./libs/main.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>&gt;</div></pre></td></tr></table></figure>
-<p>###加载路径<br>requirejs加载模块时遵照一定的规则，可以分成以下几种情况</p>
+<h3 id="加载路径"><a href="#加载路径" class="headerlink" title="加载路径"></a>加载路径</h3><p>requirejs加载模块时遵照一定的规则，可以分成以下几种情况</p>
 <ul>
 <li>当没有入口文件时，加载路径以引入requirejs的页面为准</li>
 <li>当有入口文件时，加载路径以入口文件为准</li>
 <li>通过配置可以自定义路径<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">require</span>.config(&#123;</div><div class="line">    <span class="attr">baseUrl</span>: <span class="string">'./libs'</span></div><div class="line">&#125;);</div><div class="line"><span class="built_in">require</span>([<span class="string">'a'</span>]);</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>###配置项</p>
-<ul>
+<h3 id="配置项"><a href="#配置项" class="headerlink" title="配置项"></a>配置项</h3><ul>
 <li><p>配置基础路径</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">require</span>.config(&#123;</div><div class="line">    <span class="attr">baseUrl</span>: <span class="string">'./libs'</span></div><div class="line">&#125;);</div><div class="line"><span class="built_in">require</span>([<span class="string">'a'</span>]);</div></pre></td></tr></table></figure>
 </li>
@@ -171,7 +170,7 @@ nodejs是运行在服务端的js，它是按着COMMONJS的规范实现的模块�
 <li>默认有很多第三方插件已经按照模块化的形式进行开发了</li>
 <li>要将不支持模块化的插件当成模块来使用，那就要指定依赖和返回值，通过deps和exports</li>
 </ul>
-<p>##匿名模块和具名模块<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//定义匿名模块</span></div><div class="line">define([], <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">//code</span></div><div class="line">    <span class="comment">//return</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h2 id="匿名模块和具名模块"><a href="#匿名模块和具名模块" class="headerlink" title="匿名模块和具名模块"></a>匿名模块和具名模块</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//定义匿名模块</span></div><div class="line">define([], <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">//code</span></div><div class="line">    <span class="comment">//return</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//定义具名模块</span></div><div class="line">define(<span class="string">'demo'</span>, [], <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">//code</span></div><div class="line">    <span class="comment">//return</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <p><strong>模块名必须和config的paths里的别名一致</strong></p>
 <p><a href="http://www.ruanyifeng.com/blog/2012/11/require_js.html" target="_blank" rel="external">参见阮一峰博客http://www.ruanyifeng.com/blog/2012/11/require_js.html</a></p>
@@ -179,7 +178,7 @@ nodejs是运行在服务端的js，它是按着COMMONJS的规范实现的模块�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/01/04/前端模块化/" data-id="cixic50n7000044ahe75s92cy" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/01/04/前端模块化/" data-id="cixic50n7000044ahe75s92cy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -190,7 +189,7 @@ nodejs是运行在服务端的js，它是按着COMMONJS的规范实现的模块�
   
   
     <a href="/2017/01/04/第二篇/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Ancien</strong>
+      <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">第二篇</div>
     </a>
   
@@ -223,7 +222,7 @@ nodejs是运行在服务端的js，它是按着COMMONJS的规范实现的模块�
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
@@ -256,7 +255,7 @@ nodejs是运行在服务端的js，它是按着COMMONJS的规范实现的模块�
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 John Doe<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
