@@ -317,83 +317,21 @@
 
       
         
-          
-            <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
+          <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
 <li>配置 npm，利用npm直接从网络上获取资源 <ul>
 <li>通过 npm -v查看版本号</li>
 <li><img src="https://jf117.github.io/pics/hexo-github/01.PNG" alt="查看npm版本号"></li>
 </ul>
 </li>
-<li>下载 git 的安装包，正常安装<br>  *在文件夹下右击会看到 ‘Git Bash Here’，就能在当前文件夹下启动 git<br>&lt;–!more–&gt;</li>
-<li>github<ul>
-<li>注册 github 账号</li>
-<li>新建一个仓库，给仓库起一个名字，名字有一定的规范，账号名 + ‘.github.io’</li>
-<li><img src="https://jf117.github.io/pics/hexo-github/17.PNG" alt="仓库名"></li>
+<li>下载 git 的安装包，正常安装<br>  *在文件夹下右击会看到 ‘Git Bash Here’，就能在当前文件夹下启动 git</li>
 </ul>
-</li>
-</ul>
-<h2 id="开始搭建"><a href="#开始搭建" class="headerlink" title="开始搭建"></a>开始搭建</h2><ul>
-<li>下载 hexo ，(若网络受限，可以通过淘宝的npm服务器下载)<ul>
-<li><img src="https://jf117.github.io/pics/hexo-github/02.PNG" alt="下载hexo"></li>
-<li>耐心等待，会看到下面的目录结构，直到资源下载完成</li>
-<li><img src="https://jf117.github.io/pics/hexo-github/03.PNG" alt="hexo目录结构"></li>
-<li>下载完成后，通过 hexo -v 查看版本号，若能显示版本号就表示 hexo 下载完成</li>
-<li><img src="https://jf117.github.io/pics/hexo-github/04.PNG" alt="hexo版本号"></li>
-</ul>
-</li>
-<li>在 github 上部署 hexo<ul>
-<li>打开 hexo 的官方网页查看部署的方法<a href="https://hexo.io/zh-cn/docs/deployment.html" target="_blank" rel="external">hexo.io</a></li>
-<li>本次是使用 git 部署，所以安装 hexo-deployer-git</li>
-<li><img src="https://jf117.github.io/pics/hexo-github/05.PNG" alt="安装hexo-deployer-git"></li>
-<li>npm 会在你的当前目录下安装 node_modules 文件</li>
-<li><img src="https://jf117.github.io/pics/hexo-github/06.PNG" alt="目录结构"></li>
-</ul>
-</li>
-<li>初始化博客必须的一些内容<ul>
-<li>使用 hexo init 命令</li>
-<li><img src="https://jf117.github.io/pics/hexo-github/07.PNG" alt="初始化博客"></li>
-<li>等待，随后 hexo 会在当前目录下生成一些文件，文件目录如下图所示</li>
-<li><img src="https://jf117.github.io/pics/hexo-github/08.PNG" alt="文件目录"></li>
-<li>文件目录加载结束后，等待，直到出现如下字样</li>
-<li><img src="https://jf117.github.io/pics/hexo-github/09.PNG" alt="初始化完成"></li>
-</ul>
-</li>
-<li>写博客<ul>
-<li>使用命令 hexo new 我的博客，新建一个.md文件</li>
-<li><img src="https://jf117.github.io/pics/hexo-github/10.PNG" alt="新建一篇博客"></li>
-<li>对 我的博客.md 进行编辑</li>
-</ul>
-</li>
-<li>查看本地博客<ul>
-<li>通过命令 hexo server 创建本地静态页面，并打开浏览器到 <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a>. 下查看</li>
-<li><img src="https://jf117.github.io/pics/hexo-github/11.PNG" alt="本地静态页面"></li>
-</ul>
-</li>
-<li>将博客托管到 github<ul>
-<li>再次安装 hexo-deployer-git</li>
-<li><img src="https://jf117.github.io/pics/hexo-github/12.PNG" alt="安装hexo-deployer-git"></li>
-<li>本次安装和上次安装出现的提示会不太一样。同时，在文件夹下会新增一个 .deploy_git 文件夹</li>
-<li><img src="https://jf117.github.io/pics/hexo-github/16.PNG" alt="文件夹目录"></li>
-<li>修改配置文件，打开 blog 文件夹下的 _config.yml 文件</li>
-<li><img src="https://jf117.github.io/pics/hexo-github/18.PNG" alt="修改配置"></li>
-<li>repo 这个属性的值为你创建后仓库后生成的地址</li>
-<li><img src="https://jf117.github.io/pics/hexo-github/19.PNG" alt="修改配置"></li>
-<li>通过命令 hexo g 生成静态页</li>
-<li><img src="https://jf117.github.io/pics/hexo-github/13.PNG" alt="静态页"></li>
-<li>通过命令 hexo d 部署到 github</li>
-<li><img src="https://jf117.github.io/pics/hexo-github/14.PNG" alt="部署"></li>
-<li>出现如下提示表示部署成功</li>
-<li><img src="https://jf117.github.io/pics/hexo-github/15.PNG" alt="部署成功"></li>
-<li>访问你的仓库名就能进入你的博客</li>
-</ul>
-</li>
-<li>博客主题样式<ul>
-<li>可以通过下载基于hexo的主题，然后修改配置文件，重新编译你的博客 hexo g -d 就行了</li>
-</ul>
-</li>
-</ul>
-
-          
+          <!--noindex-->
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/01/06/Github-Hexo搭建博客/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
