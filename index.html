@@ -238,6 +238,127 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/06/Github-Hexo搭建博客/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="JF">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/j.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="沉默の未来">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="沉默の未来" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/01/06/Github-Hexo搭建博客/" itemprop="url">
+                  Github+Hexo搭建博客
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-06T16:07:34+08:00">
+                2017-01-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
+<li>配置 npm，利用npm直接从网络上获取资源<br><img src="https://github.com/jf117/jf117.github.io/pics/hexo+github/1.PNG" alt=""></li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/05/前端插件使用/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -339,95 +460,18 @@
 
       
         
-          
-            <h2 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h2><h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p><a href="https://github.com/carhartl/jquery-cookie" target="_blank" rel="external">jquery.cookie</a></p>
+          <h2 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h2><h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p><a href="https://github.com/carhartl/jquery-cookie">jquery.cookie</a></p>
 <h3 id="基本作用"><a href="#基本作用" class="headerlink" title="基本作用"></a>基本作用</h3><ul>
 <li>通过使用 jqury.cookie.js 小插件对 cookie 进行读、写、删、设置生命周期和 cookie 作用域</li>
 <li>该插件返回的 cookie 的类型是对象</li>
 </ul>
-<h3 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h3><h4 id="使用前准备"><a href="#使用前准备" class="headerlink" title="使用前准备"></a>使用前准备</h4><ul>
-<li>该插件是基于 jquery 的，所以在使用前应该先引入 jquery.js，然后再引入 jquery-cookie.js<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"./js/jquery.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"./js/jquery-cookie.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h4><ul>
-<li><p>添加 cookie</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$.cookie(<span class="string">'key'</span>, <span class="string">'value'</span>);</div></pre></td></tr></table></figure>
-</li>
-<li><p>设置 cookie 的生命周期</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//key=value 这个 cookie 的生命周期为 7 天</span></div><div class="line">$.cookie(<span class="string">'key'</span>, <span class="string">'value'</span>, &#123;<span class="attr">expires</span>: <span class="number">7</span>&#125;);</div></pre></td></tr></table></figure>
-</li>
-<li><p>设置 cookie 的作用域</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//key=value 这个 cookie 的作用域为网站的根目录</span></div><div class="line">$.cookie(<span class="string">'key'</span>, <span class="string">'value'</span>, &#123;<span class="attr">expires</span>: <span class="number">7</span>, <span class="attr">path</span>: <span class="string">'/'</span>&#125;);</div></pre></td></tr></table></figure>
-</li>
-<li><p>读取 cookie 的值</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$.cookie();                  <span class="comment">//获取 cookie 中全部的值</span></div><div class="line">$.cookie(<span class="string">'key'</span>);             <span class="comment">//获取 cookie 中键为 key 的值</span></div><div class="line">$.cookie(<span class="string">'nothing'</span>);         <span class="comment">//undefined</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>删除 cookie 的值</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$.removeCookie(<span class="string">'key'</span>);       <span class="comment">//删除 key 对应的 cookie，返回 true</span></div><div class="line">$.removeCookie(<span class="string">'nothing'</span>);   <span class="comment">//返回 false</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//注意: 当要删除一个 cookie, 你必须准确地删除这个 cookie 对应的 path 、 domain 和 secure options</span></div><div class="line">$.cookie(<span class="string">'name'</span>, <span class="string">'value'</span>, &#123; <span class="attr">path</span>: <span class="string">'/'</span> &#125;);</div><div class="line"><span class="comment">// This won't work!</span></div><div class="line">$.removeCookie(<span class="string">'name'</span>); <span class="comment">// =&gt; false</span></div><div class="line"><span class="comment">// This will work!</span></div><div class="line">$.removeCookie(<span class="string">'name'</span>, &#123; <span class="attr">path</span>: <span class="string">'/'</span> &#125;); <span class="comment">// =&gt; true</span></div></pre></td></tr></table></figure>
-<h2 id="nprogress"><a href="#nprogress" class="headerlink" title="nprogress"></a>nprogress</h2><h3 id="下载地址-1"><a href="#下载地址-1" class="headerlink" title="下载地址"></a>下载地址</h3><p><a href="http://ricostacruz.com/nprogress/" target="_blank" rel="external">nprogress.js</a></p>
-<h3 id="基本作用-1"><a href="#基本作用-1" class="headerlink" title="基本作用"></a>基本作用</h3><ul>
-<li>在网页上方出现一个进度条，用于网页加载时使用</li>
-<li>小进度条可用于 Ajax</li>
-</ul>
-<h3 id="基本使用-1"><a href="#基本使用-1" class="headerlink" title="基本使用"></a>基本使用</h3><h4 id="使用前准备-1"><a href="#使用前准备-1" class="headerlink" title="使用前准备"></a>使用前准备</h4><ul>
-<li>该插件支持 AMD 模块化</li>
-<li>在使用前需要引入 nprogress.css 和 nprogress.js<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"nprogress.css"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"./js/jquery-cookie.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="用法-1"><a href="#用法-1" class="headerlink" title="用法"></a>用法</h4><ul>
-<li><p>基本用法</p>
-<ul>
-<li><p>简单地调用 start() 和 done() 方法就可以控制进度条</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">NProgress.start();</div><div class="line">NProgress.done();</div></pre></td></tr></table></figure>
-</li>
-<li><p>配合 Ajax 可以实现加载 ajax 时出现进度条</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$(<span class="built_in">document</span>).on(<span class="string">'ajaxStart'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">	NProgress.start();</div><div class="line">&#125;);</div><div class="line">$(<span class="built_in">document</span>).on(<span class="string">'ajaxStop'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">	NProgress.done();</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>配置nprogress</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">NProgress.configure(&#123;</div><div class="line">	<span class="attr">minimum</span>: <span class="number">0.1</span>,						 <span class="comment">//通过 minimum 来修改最小百分比</span></div><div class="line">	ease: <span class="string">'linear'</span>, <span class="attr">speed</span>: <span class="number">500</span>,			 <span class="comment">//通过 ease(一个 CSS3 中的 easing 值)调整动画设置和速度 speed （毫秒ms）</span></div><div class="line">	trickle: <span class="literal">false</span>,						 <span class="comment">//想关闭进度条步进？设置 trickle 为 false</span></div><div class="line">	trickleRate: <span class="number">0.02</span>, <span class="attr">trickleSpeed</span>: <span class="number">800</span>,<span class="comment">//调整 trickleRate (每次步进增长多少) 和 trickleSpeed (步进间隔，单位毫秒ms).</span></div><div class="line">	showSpinner: <span class="literal">false</span>					 <span class="comment">//禁用进度环</span></div><div class="line">	<span class="comment">//.....</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="bootstrap-datepicker"><a href="#bootstrap-datepicker" class="headerlink" title="bootstrap-datepicker"></a>bootstrap-datepicker</h2><h3 id="下载地址-2"><a href="#下载地址-2" class="headerlink" title="下载地址"></a>下载地址</h3><p><a href="https://github.com/uxsolutions/bootstrap-datepicker" target="_blank" rel="external">bootstrap-datepicker下载</a></p>
-<h3 id="文档地址"><a href="#文档地址" class="headerlink" title="文档地址"></a>文档地址</h3><p><a href="http://bootstrap-datepicker.readthedocs.io/en/stable/" target="_blank" rel="external">bootstrap-datepicker文档</a></p>
-<h3 id="基本作用-2"><a href="#基本作用-2" class="headerlink" title="基本作用"></a>基本作用</h3><ul>
-<li>日期控件，日历选择器</li>
-</ul>
-<h3 id="基本使用-2"><a href="#基本使用-2" class="headerlink" title="基本使用"></a>基本使用</h3><h4 id="使用前准备-2"><a href="#使用前准备-2" class="headerlink" title="使用前准备"></a>使用前准备</h4><ul>
-<li>从github上下载下来的 bootstrap-datepicker-master 是整个工程文件，我们所需要的文件一般都在 dist 文件夹中</li>
-<li>在 css 文件夹中，.map 文件是 less 编译成 css 后编译工具自动生成的对应文件。如果直接引入 .standalone.css 文件，就不需要引入 bootstrap.css 文件；否则就要引入 bootstrap.css 文件</li>
-<li>该插件是基于 bootstrap 的，所以在使用前应该先引入 bootstrap.js ，然后再引入 bootstrap-datepicker.js</li>
-</ul>
-<h4 id="用法-2"><a href="#用法-2" class="headerlink" title="用法"></a>用法</h4><ul>
-<li><p>基本用法</p>
-<ul>
-<li><p>通过 javascript 调用 datepicker</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'.datepicker'</span>).datepicker();</div></pre></td></tr></table></figure>
-</li>
-<li><p>通过标签调用 datepicker</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">data-provide</span>=<span class="string">"datepicker"</span>&gt;</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>高级定制</p>
-<ul>
-<li><p>通过 javascript</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'.datepicker'</span>).datepicker(&#123;</div><div class="line">	<span class="attr">format</span>: <span class="string">'yyyy-mm-dd'</span>,</div><div class="line">	<span class="attr">language</span>: <span class="string">'zh-CN'</span>,</div><div class="line">	<span class="attr">endDate</span>: <span class="string">'0d'</span></div><div class="line">	<span class="comment">//......</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-</li>
-<li><p>通过标签</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">value</span>=<span class="string">"2016-10-01"</span> <span class="attr">data-date-format</span>=<span class="string">"yyyy-mm-dd"</span> <span class="attr">data-date-language</span>=<span class="string">"zh-CN"</span> <span class="attr">data-date-end-date</span>=<span class="string">"0d"</span> <span class="attr">data-provide</span>=<span class="string">"datepicker"</span>&gt;</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>详情查看<a href="http://bootstrap-datepicker.readthedocs.io/en/stable/" target="_blank" rel="external">文档</a></p>
-</li>
-</ul>
-</li>
-</ul>
-
-          
+          <!--noindex-->
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/01/05/前端插件使用/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -804,7 +848,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -822,7 +866,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
