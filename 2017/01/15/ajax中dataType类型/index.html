@@ -94,7 +94,7 @@
 <meta property="og:description" content="dataType可以值设置
 默认返回数据类型：String
 预期服务器返回的数据类型。如果不指定，jQuery 将自动根据 HTTP 包 MIME 信息来智能判断，比如 XML MIME 类型就被识别为 XML。JSON 就会生成一个 JavaScript 对象，而 script 则会执行这个脚本。随后服务器端返回的数据会根据这个值解析后，传递给回调函数。">
-<meta property="og:updated_time" content="2017-01-15T11:58:17.701Z">
+<meta property="og:updated_time" content="2017-01-15T12:04:54.691Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ajax中dataType类型">
 <meta name="twitter:description" content="dataType可以值设置
@@ -377,6 +377,22 @@
     <div>
       
         
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/path/to/wechatpay.jpg" alt="JF WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+    </div>
+  </div>
+
 
       
     </div>
