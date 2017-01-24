@@ -90,7 +90,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/01/24/Vue模板注册组件及构造器/index.html">
 <meta property="og:site_name" content="沉默の未来">
 <meta property="og:description" content="定义模板注册组件使用Vue.extend()方法自定义组件构造器">
-<meta property="og:updated_time" content="2017-01-24T08:14:26.000Z">
+<meta property="og:updated_time" content="2017-01-24T08:19:46.651Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue模板注册组件及构造器">
 <meta name="twitter:description" content="定义模板注册组件使用Vue.extend()方法自定义组件构造器">
@@ -366,7 +366,37 @@
 </tr>
 </tbody>
 </table>
-<h3 id="实例的生命周期"><a href="#实例的生命周期" class="headerlink" title="实例的生命周期"></a>实例的生命周期</h3><p>Vue实例在创建时有一系列的初始化步骤（建立数据观察、编译模板、创建必要的数据绑定等）。在此过程中，它将调用一些生命钩子，给自定义的逻辑提供运行。<br>在实例生命周期的不同阶段可以调用不同的钩子，如 created、 mounted、 updated 、destroyed 。钩子的 this 指向调用它的 Vue 实例。组件的自定义逻辑可以分布在这些钩子中。<br>|生命周期钩子|作用|<br>|–|–|<br>|beforeCreated|在实例初始化之后，数据观测(data observer) 和 event/watcher 事件配置之前被调用|<br>|created|在实例创建完成后调用|<br>|等等(还有其他钩子，具体内容查看文档)|等等|<br>|beforeDestroy|实例销毁之前调用，这一步，实例仍然完全可用|<br>|destroy|实例销毁后调用，调用后，Vue 实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁|</p>
+<h3 id="实例的生命周期"><a href="#实例的生命周期" class="headerlink" title="实例的生命周期"></a>实例的生命周期</h3><p>Vue实例在创建时有一系列的初始化步骤（建立数据观察、编译模板、创建必要的数据绑定等）。在此过程中，它将调用一些生命钩子，给自定义的逻辑提供运行。<br>在实例生命周期的不同阶段可以调用不同的钩子，如 created、 mounted、 updated 、destroyed 。钩子的 this 指向调用它的 Vue 实例。组件的自定义逻辑可以分布在这些钩子中。</p>
+<table>
+<thead>
+<tr>
+<th>生命周期钩子</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>beforeCreated</td>
+<td>在实例初始化之后，数据观测(data observer) 和 event/watcher 事件配置之前被调用</td>
+</tr>
+<tr>
+<td>created</td>
+<td>在实例创建完成后调用</td>
+</tr>
+<tr>
+<td>……</td>
+<td>……</td>
+</tr>
+<tr>
+<td>beforeDestroy</td>
+<td>实例销毁之前调用，这一步，实例仍然完全可用</td>
+</tr>
+<tr>
+<td>destroy</td>
+<td>实例销毁后调用，调用后，Vue 实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁</td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
