@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="ajax,dataType,传输后台数据格式处理," />
+  <meta name="keywords" content="过滤器," />
 
 
 
@@ -84,22 +84,130 @@
 
 
 
-<meta name="description" content="dataType可以值设置
-默认返回数据类型：String
-预期服务器返回的数据类型。如果不指定，jQuery 将自动根据 HTTP 包 MIME 信息来智能判断，比如 XML MIME 类型就被识别为 XML。JSON 就会生成一个 JavaScript 对象，而 script 则会执行这个脚本。随后服务器端返回的数据会根据这个值解析后，传递给回调函数。">
+<meta name="description" content="过滤器基本语法1&amp;#123;&amp;#123; msg | filter &amp;#125;&amp;#125;
+内置过滤器
+
+
+过滤器
+作用
+
+
+
+
+capitalize
+首字母大写
+
+
+uppercase
+转化为大写字母
+
+
+lowercase
+转化为小写字母
+
+
+currency
+转成货币的方式显示
+
+
+pluralize
+不理解
+
+
+json
+转换成json数据
+
+
+debounce
+延时执行
+
+
+limit">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ajax中dataType类型">
-<meta property="og:url" content="http://yoursite.com/2017/01/15/ajax中dataType类型/index.html">
+<meta property="og:title" content="Vue过滤器">
+<meta property="og:url" content="http://yoursite.com/2017/01/31/Vue过滤器/index.html">
 <meta property="og:site_name" content="沉默の未来">
-<meta property="og:description" content="dataType可以值设置
-默认返回数据类型：String
-预期服务器返回的数据类型。如果不指定，jQuery 将自动根据 HTTP 包 MIME 信息来智能判断，比如 XML MIME 类型就被识别为 XML。JSON 就会生成一个 JavaScript 对象，而 script 则会执行这个脚本。随后服务器端返回的数据会根据这个值解析后，传递给回调函数。">
-<meta property="og:updated_time" content="2017-01-15T12:04:54.691Z">
+<meta property="og:description" content="过滤器基本语法1&amp;#123;&amp;#123; msg | filter &amp;#125;&amp;#125;
+内置过滤器
+
+
+过滤器
+作用
+
+
+
+
+capitalize
+首字母大写
+
+
+uppercase
+转化为大写字母
+
+
+lowercase
+转化为小写字母
+
+
+currency
+转成货币的方式显示
+
+
+pluralize
+不理解
+
+
+json
+转换成json数据
+
+
+debounce
+延时执行
+
+
+limit">
+<meta property="og:updated_time" content="2017-01-31T07:15:35.631Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ajax中dataType类型">
-<meta name="twitter:description" content="dataType可以值设置
-默认返回数据类型：String
-预期服务器返回的数据类型。如果不指定，jQuery 将自动根据 HTTP 包 MIME 信息来智能判断，比如 XML MIME 类型就被识别为 XML。JSON 就会生成一个 JavaScript 对象，而 script 则会执行这个脚本。随后服务器端返回的数据会根据这个值解析后，传递给回调函数。">
+<meta name="twitter:title" content="Vue过滤器">
+<meta name="twitter:description" content="过滤器基本语法1&amp;#123;&amp;#123; msg | filter &amp;#125;&amp;#125;
+内置过滤器
+
+
+过滤器
+作用
+
+
+
+
+capitalize
+首字母大写
+
+
+uppercase
+转化为大写字母
+
+
+lowercase
+转化为小写字母
+
+
+currency
+转成货币的方式显示
+
+
+pluralize
+不理解
+
+
+json
+转换成json数据
+
+
+debounce
+延时执行
+
+
+limit">
 
 
 
@@ -127,13 +235,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/01/15/ajax中dataType类型/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/01/31/Vue过滤器/"/>
 
 
 
 
 
-  <title> ajax中dataType类型 | 沉默の未来 </title>
+  <title> Vue过滤器 | 沉默の未来 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -246,7 +354,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/15/ajax中dataType类型/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/31/Vue过滤器/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="JF">
@@ -270,7 +378,7 @@
             
             
               
-                ajax中dataType类型
+                Vue过滤器
               
             
           </h1>
@@ -285,8 +393,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-15T19:38:04+08:00">
-                2017-01-15
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-31T14:48:28+08:00">
+                2017-01-31
               </time>
             
 
@@ -308,8 +416,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ajax/" itemprop="url" rel="index">
-                    <span itemprop="name">ajax</span>
+                  <a href="/categories/Vue/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue</span>
                   </a>
                 </span>
 
@@ -343,27 +451,73 @@
       
 
       
-        <h2 id="dataType可以值设置"><a href="#dataType可以值设置" class="headerlink" title="dataType可以值设置"></a>dataType可以值设置</h2><ul>
-<li>默认返回数据类型：String</li>
-<li>预期服务器返回的数据类型。如果不指定，jQuery 将自动根据 HTTP 包 MIME 信息来智能判断，比如 XML MIME 类型就被识别为 XML。JSON 就会生成一个 JavaScript 对象，而 script 则会执行这个脚本。随后服务器端返回的数据会根据这个值解析后，传递给回调函数。<a id="more"></a></li>
-<li><p>可用值: </p>
-<ol>
-<li>“xml”: 返回 XML 文档，可用 jQuery 处理。</li>
-<li>“html”: 返回纯文本 HTML 信息；包含的 script 标签会在插入 dom 时执行。</li>
-<li>“script”: 返回纯文本 JavaScript 代码。不会自动缓存结果。除非设置了 “cache” 参数。注意：在远程请求时(不在同一个域下)，所有 POST 请求都将转为 GET 请求。（因为将使用 DOM 的 script标签来加载）</li>
-<li>“json”: 返回 JSON 数据 。</li>
-<li>“jsonp”: JSONP 格式。使用 JSONP 形式调用函数时，如 “myurl?callback=?” jQuery 将自动替换 ? 为正确的函数名，以执行回调函数。</li>
-<li>“text”: 返回纯文本字符串</li>
-</ol>
-</li>
+        <h2 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h2><p>基本语法<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;&#123; msg | filter &#125;&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="内置过滤器"><a href="#内置过滤器" class="headerlink" title="内置过滤器"></a>内置过滤器</h3><table>
+<thead>
+<tr>
+<th>过滤器</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>capitalize</td>
+<td>首字母大写</td>
+</tr>
+<tr>
+<td>uppercase</td>
+<td>转化为大写字母</td>
+</tr>
+<tr>
+<td>lowercase</td>
+<td>转化为小写字母</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>转成货币的方式显示</td>
+</tr>
+<tr>
+<td>pluralize</td>
+<td>不理解</td>
+</tr>
+<tr>
+<td>json</td>
+<td>转换成json数据</td>
+</tr>
+<tr>
+<td>debounce</td>
+<td>延时执行</td>
+</tr>
+<tr>
+<td>limitBy</td>
+<td>取出字符串或数组的前（正数）几位或后（负数）几位</td>
+</tr>
+<tr>
+<td>filterBy</td>
+<td>在给定数组中选择满足条件的一个子集，并返回一个新数组，其条件可以是一个字符串、对象、函数</td>
+</tr>
+<tr>
+<td>orderBy</td>
+<td>对数组进行排序，第二个参数可控制方向</td>
+</tr>
+</tbody>
+</table>
+<p><strong>详见<a href="http://www.cnblogs.com/lolDragon/p/6247651.html" target="_blank" rel="external">Vue过滤器</a></strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123; msg | capitalize &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">    <span class="attr">el</span>: <span class="string">''</span>,</div><div class="line">    <span class="attr">data</span>: &#123; <span class="attr">msg</span>: <span class="string">'hello world'</span> &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<ul>
+<li>过滤器可以串联<ul>
+<li>&#123;&#123; msg | filter1 | filter2 &#124;&#124;</li>
 </ul>
-<h2 id="后台直接处理数据格式"><a href="#后台直接处理数据格式" class="headerlink" title="后台直接处理数据格式"></a>后台直接处理数据格式</h2><ul>
-<li>如果后台直接对返回的数据进行了处理，那就不需要设置 dataType</li>
-<li><p>如当我们使用 HTTP 返回传输数据时，可以设置 writeHead 为前端所需要的数据格式</p>
-  <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//html文件</span></div><div class="line">res.writeHead(<span class="number">200</span>, &#123;<span class="string">'Content-Type'</span>: <span class="string">'text/html;charset=utf-8'</span>&#125;);</div><div class="line"><span class="comment">//text文件</span></div><div class="line">res.writeHead(<span class="number">200</span>, &#123;<span class="string">'Content-Type'</span>: <span class="string">'text/plain;charset=utf-8'</span>&#125;);</div><div class="line"><span class="comment">//json文件</span></div><div class="line">res.writeHead(<span class="number">200</span>, &#123;<span class="string">'Content-Type'</span>: <span class="string">'text/json;charset=utf-8'</span>&#125;);</div><div class="line"><span class="comment">//......</span></div></pre></td></tr></table></figure>
 </li>
+<li>过滤器也接受参数<ul>
+<li>&#123;&#123; msg | filter1 ‘arg1’ arg2 &#124;&#124;</li>
 </ul>
-
+</li>
+<li>过滤器函数始终以表达式的值作为第一个参数。带引号的参数视为字符串，不带引号的参数按表达式计算。</li>
+</ul>
+<h3 id="自定义过滤器"><a href="#自定义过滤器" class="headerlink" title="自定义过滤器"></a>自定义过滤器</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">v-text</span>=<span class="string">"msg | wrap 'before' 'after'"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123; msg | wrap 'before' 'after' &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 指定过滤器的名字为 wrap </span></div><div class="line">Vue.filter(<span class="string">'wrap'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">value, begin, end</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> begin + value + end;</div><div class="line">&#125;);</div><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">    <span class="attr">el</span>: <span class="string">''</span>,</div><div class="line">    <span class="attr">data</span>: &#123; <span class="attr">msg</span>: <span class="string">' hello '</span> &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -402,11 +556,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/ajax/" rel="tag"># ajax</a>
-          
-            <a href="/tags/dataType/" rel="tag"># dataType</a>
-          
-            <a href="/tags/传输后台数据格式处理/" rel="tag"># 传输后台数据格式处理</a>
+            <a href="/tags/过滤器/" rel="tag"># 过滤器</a>
           
         </div>
       
@@ -415,8 +565,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/01/10/CSS引入之link-import/" rel="next" title="CSS引入之link/@import">
-                <i class="fa fa-chevron-left"></i> CSS引入之link/@import
+              <a href="/2017/01/26/Vue数据绑定/" rel="next" title="Vue数据绑定">
+                <i class="fa fa-chevron-left"></i> Vue数据绑定
               </a>
             
           </div>
@@ -424,10 +574,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/01/17/AngularJS之脏检查和广播/" rel="prev" title="AngularJS之脏检查和广播">
-                AngularJS之脏检查和广播 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -550,7 +696,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#dataType可以值设置"><span class="nav-number">1.</span> <span class="nav-text">dataType可以值设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后台直接处理数据格式"><span class="nav-number">2.</span> <span class="nav-text">后台直接处理数据格式</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#过滤器"><span class="nav-number">1.</span> <span class="nav-text">过滤器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内置过滤器"><span class="nav-number">1.1.</span> <span class="nav-text">内置过滤器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义过滤器"><span class="nav-number">1.2.</span> <span class="nav-text">自定义过滤器</span></a></li></ol></li></ol></div>
             
 
           </div>
