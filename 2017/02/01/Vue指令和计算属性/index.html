@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="过滤器," />
+  <meta name="keywords" content="指令,计算属性," />
 
 
 
@@ -84,16 +84,40 @@
 
 
 
-<meta name="description" content="过滤器基本语法: &amp;#123;&amp;#123; msg | filter &amp;#125;&amp;#125;">
+<meta name="description" content="指令v-开头的都是指令
+
+v-bind 缩写：就是直接去掉v-bind，保留：和属性
+v-text | v-html
+v-if | v-else | v-else-if
+v-for
+v-on 缩写：v-on:写成@
+v-model
+…">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vue过滤器">
-<meta property="og:url" content="http://yoursite.com/2017/01/31/Vue过滤器/index.html">
+<meta property="og:title" content="Vue指令和计算属性">
+<meta property="og:url" content="http://yoursite.com/2017/02/01/Vue指令和计算属性/index.html">
 <meta property="og:site_name" content="沉默の未来">
-<meta property="og:description" content="过滤器基本语法: &amp;#123;&amp;#123; msg | filter &amp;#125;&amp;#125;">
-<meta property="og:updated_time" content="2017-01-31T07:21:03.157Z">
+<meta property="og:description" content="指令v-开头的都是指令
+
+v-bind 缩写：就是直接去掉v-bind，保留：和属性
+v-text | v-html
+v-if | v-else | v-else-if
+v-for
+v-on 缩写：v-on:写成@
+v-model
+…">
+<meta property="og:updated_time" content="2017-02-01T08:26:29.519Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Vue过滤器">
-<meta name="twitter:description" content="过滤器基本语法: &amp;#123;&amp;#123; msg | filter &amp;#125;&amp;#125;">
+<meta name="twitter:title" content="Vue指令和计算属性">
+<meta name="twitter:description" content="指令v-开头的都是指令
+
+v-bind 缩写：就是直接去掉v-bind，保留：和属性
+v-text | v-html
+v-if | v-else | v-else-if
+v-for
+v-on 缩写：v-on:写成@
+v-model
+…">
 
 
 
@@ -121,13 +145,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/01/31/Vue过滤器/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/02/01/Vue指令和计算属性/"/>
 
 
 
 
 
-  <title> Vue过滤器 | 沉默の未来 </title>
+  <title> Vue指令和计算属性 | 沉默の未来 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -240,7 +264,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/31/Vue过滤器/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/01/Vue指令和计算属性/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="JF">
@@ -264,7 +288,7 @@
             
             
               
-                Vue过滤器
+                Vue指令和计算属性
               
             
           </h1>
@@ -279,8 +303,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-31T14:48:28+08:00">
-                2017-01-31
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-01T16:22:55+08:00">
+                2017-02-01
               </time>
             
 
@@ -337,74 +361,33 @@
       
 
       
-        <h2 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h2><p>基本语法: &#123;&#123; msg | filter &#125;&#125;</p>
-<a id="more"></a>
-<h3 id="内置过滤器"><a href="#内置过滤器" class="headerlink" title="内置过滤器"></a>内置过滤器</h3><table>
-<thead>
-<tr>
-<th>过滤器</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>capitalize</td>
-<td>首字母大写</td>
-</tr>
-<tr>
-<td>uppercase</td>
-<td>转化为大写字母</td>
-</tr>
-<tr>
-<td>lowercase</td>
-<td>转化为小写字母</td>
-</tr>
-<tr>
-<td>currency</td>
-<td>转成货币的方式显示</td>
-</tr>
-<tr>
-<td>pluralize</td>
-<td>不理解</td>
-</tr>
-<tr>
-<td>json</td>
-<td>转换成json数据</td>
-</tr>
-<tr>
-<td>debounce</td>
-<td>延时执行</td>
-</tr>
-<tr>
-<td>limitBy</td>
-<td>取出字符串或数组的前（正数）几位或后（负数）几位</td>
-</tr>
-<tr>
-<td>filterBy</td>
-<td>在给定数组中选择满足条件的一个子集，并返回一个新数组，其条件可以是一个字符串、对象、函数</td>
-</tr>
-<tr>
-<td>orderBy</td>
-<td>对数组进行排序，第二个参数可控制方向</td>
-</tr>
-</tbody>
-</table>
-<p><strong>详见<a href="http://www.cnblogs.com/lolDragon/p/6247651.html" target="_blank" rel="external">Vue过滤器</a></strong></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123; msg | capitalize &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">    <span class="attr">el</span>: <span class="string">''</span>,</div><div class="line">    <span class="attr">data</span>: &#123; <span class="attr">msg</span>: <span class="string">'hello world'</span> &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+        <h2 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h2><p><code>v-</code>开头的都是指令</p>
 <ul>
-<li>过滤器可以串联<ul>
-<li>&#123;&#123; msg | filter1 | filter2 &#125;&#125;</li>
+<li>v-bind 缩写：就是直接去掉v-bind，保留：和属性</li>
+<li>v-text | v-html</li>
+<li>v-if | v-else | v-else-if</li>
+<li>v-for</li>
+<li>v-on 缩写：v-on:写成@</li>
+<li>v-model</li>
+<li>…</li>
+</ul>
+<a id="more"></a>
+<h2 id="计算属性"><a href="#计算属性" class="headerlink" title="计算属性"></a>计算属性</h2><ul>
+<li><p>为什么Vue.js将绑定表达式限制为一个表达式？</p>
+<ul>
+<li>在模板中表达式非常便利，但是它们实际上只用于简单的操作。</li>
+<li>模板是为了描述视图的结构。</li>
+<li>在模板中放入太多的逻辑会让模板过重且难以维护。</li>
 </ul>
 </li>
-<li>过滤器也接受参数<ul>
-<li>&#123;&#123; msg | filter1 ‘arg1’ arg2 &#125;&#125;</li>
-</ul>
+<li><p>如果需要多于一个表达式的逻辑，应该使用计算属性。</p>
+  <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>a=&#123;&#123; a &#125;&#125;,b=&#123;&#123; b &#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">    <span class="attr">el</span>: <span class="string">''</span>,</div><div class="line">    <span class="attr">data</span>: &#123; <span class="attr">a</span>: <span class="number">1</span> &#125;,</div><div class="line">    <span class="attr">computed</span>: &#123; <span class="attr">b</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="keyword">return</span> <span class="keyword">this</span>.a + <span class="number">1</span> &#125; &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 </li>
-<li>过滤器函数始终以表达式的值作为第一个参数。带引号的参数视为字符串，不带引号的参数按表达式计算。</li>
+<li><p>计算属性默认值是getter，不过在需要时你也可以提供一个setter</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">computed: &#123;</div><div class="line">    <span class="attr">b</span>: &#123;</div><div class="line">        <span class="attr">get</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="comment">// return </span></div><div class="line">        &#125;</div><div class="line">        set: <span class="function"><span class="keyword">function</span>(<span class="params"> newval </span>)</span>&#123;</div><div class="line">            <span class="comment">// ...</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></li>
 </ul>
-<h3 id="自定义过滤器"><a href="#自定义过滤器" class="headerlink" title="自定义过滤器"></a>自定义过滤器</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">v-text</span>=<span class="string">"msg | wrap 'before' 'after'"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123; msg | wrap 'before' 'after' &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 指定过滤器的名字为 wrap </span></div><div class="line">Vue.filter(<span class="string">'wrap'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">value, begin, end</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> begin + value + end;</div><div class="line">&#125;);</div><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">    <span class="attr">el</span>: <span class="string">''</span>,</div><div class="line">    <span class="attr">data</span>: &#123; <span class="attr">msg</span>: <span class="string">' hello '</span> &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -443,7 +426,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/过滤器/" rel="tag"># 过滤器</a>
+            <a href="/tags/指令/" rel="tag"># 指令</a>
+          
+            <a href="/tags/计算属性/" rel="tag"># 计算属性</a>
           
         </div>
       
@@ -452,8 +437,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/01/26/Vue数据绑定/" rel="next" title="Vue数据绑定">
-                <i class="fa fa-chevron-left"></i> Vue数据绑定
+              <a href="/2017/01/31/Vue过滤器/" rel="next" title="Vue过滤器">
+                <i class="fa fa-chevron-left"></i> Vue过滤器
               </a>
             
           </div>
@@ -461,10 +446,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/02/01/Vue指令和计算属性/" rel="prev" title="Vue指令和计算属性">
-                Vue指令和计算属性 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -587,7 +568,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#过滤器"><span class="nav-number">1.</span> <span class="nav-text">过滤器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内置过滤器"><span class="nav-number">1.1.</span> <span class="nav-text">内置过滤器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义过滤器"><span class="nav-number">1.2.</span> <span class="nav-text">自定义过滤器</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#指令"><span class="nav-number">1.</span> <span class="nav-text">指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计算属性"><span class="nav-number">2.</span> <span class="nav-text">计算属性</span></a></li></ol></div>
             
 
           </div>
