@@ -96,7 +96,7 @@
 用于观察 Vue 实例上的数据变动。
 当一些数据需要根据其他数据变化时，可以使用 $watch
 但是通常更好的办法是使用计算属性而不是一个命令式的$watch回调。1234567var vm = new Vue(&amp;#123;    el: &apos;&apos;,    data: &amp;#123; a: &apos;a1&apos; &amp;#125;&amp;#125;)vm.$watch(&apos;a&apos;,function(newval, o">
-<meta property="og:updated_time" content="2017-02-02T09:34:47.000Z">
+<meta property="og:updated_time" content="2017-02-02T09:39:43.781Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue之watch与样式绑定">
 <meta name="twitter:description" content="$watch
@@ -352,6 +352,7 @@
 <li>但是通常更好的办法是使用计算属性而不是一个命令式的$watch回调。<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</div><div class="line">    <span class="attr">el</span>: <span class="string">''</span>,</div><div class="line">    <span class="attr">data</span>: &#123; <span class="attr">a</span>: <span class="string">'a1'</span> &#125;</div><div class="line">&#125;)</div><div class="line">vm.$watch(<span class="string">'a'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">newval, oldval</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(newval, oldval);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 </li>
 </ul>
+<a id="more"></a>
 <h2 id="class-和-style-绑定"><a href="#class-和-style-绑定" class="headerlink" title="class 和 style 绑定"></a>class 和 style 绑定</h2><ul>
 <li>数据绑定一个常见需求是操作元素的 class 列表和它的内联样式。</li>
 <li>因为它们都是属性，我们可以用 v-bind 处理它们：<ul>
@@ -362,7 +363,7 @@
 </ul>
 </li>
 <li>可以使用 &#123;&#123; &#125;&#125; 绑定class<ul>
-<li>class=”“ </li>
+<li>class=”&#123;&#123; className &#125;&#125;” </li>
 <li>不推荐使用上述方法</li>
 <li>容易和 v-bind:class 混用，推荐使用 v-bind</li>
 </ul>
@@ -471,8 +472,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/02/02/Vue之watch/" rel="next" title="Vue之watch">
-                <i class="fa fa-chevron-left"></i> Vue之watch
+              <a href="/2017/02/01/Vue指令和计算属性/" rel="next" title="Vue指令和计算属性">
+                <i class="fa fa-chevron-left"></i> Vue指令和计算属性
               </a>
             
           </div>
@@ -549,7 +550,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
