@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="指令,计算属性," />
+  <meta name="keywords" content="watch,class 和 style 绑定," />
 
 
 
@@ -84,40 +84,25 @@
 
 
 
-<meta name="description" content="指令v-开头的都是指令
-
-v-bind 缩写：就是直接去掉v-bind，保留：和属性
-v-text | v-html
-v-if | v-else | v-else-if
-v-for
-v-on 缩写：v-on:写成@
-v-model
-…">
+<meta name="description" content="$watch
+用于观察 Vue 实例上的数据变动。
+当一些数据需要根据其他数据变化时，可以使用 $watch
+但是通常更好的办法是使用计算属性而不是一个命令式的$watch回调。1234567var vm = new Vue(&amp;#123;    el: &apos;&apos;,    data: &amp;#123; a: &apos;a1&apos; &amp;#125;&amp;#125;)vm.$watch(&apos;a&apos;,function(newval, o">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vue指令和计算属性">
-<meta property="og:url" content="http://yoursite.com/2017/02/01/Vue指令和计算属性/index.html">
+<meta property="og:title" content="Vue之watch与样式绑定">
+<meta property="og:url" content="http://yoursite.com/2017/02/02/Vue之watch与样式绑定/index.html">
 <meta property="og:site_name" content="沉默の未来">
-<meta property="og:description" content="指令v-开头的都是指令
-
-v-bind 缩写：就是直接去掉v-bind，保留：和属性
-v-text | v-html
-v-if | v-else | v-else-if
-v-for
-v-on 缩写：v-on:写成@
-v-model
-…">
-<meta property="og:updated_time" content="2017-02-01T08:26:29.519Z">
+<meta property="og:description" content="$watch
+用于观察 Vue 实例上的数据变动。
+当一些数据需要根据其他数据变化时，可以使用 $watch
+但是通常更好的办法是使用计算属性而不是一个命令式的$watch回调。1234567var vm = new Vue(&amp;#123;    el: &apos;&apos;,    data: &amp;#123; a: &apos;a1&apos; &amp;#125;&amp;#125;)vm.$watch(&apos;a&apos;,function(newval, o">
+<meta property="og:updated_time" content="2017-02-02T09:34:47.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Vue指令和计算属性">
-<meta name="twitter:description" content="指令v-开头的都是指令
-
-v-bind 缩写：就是直接去掉v-bind，保留：和属性
-v-text | v-html
-v-if | v-else | v-else-if
-v-for
-v-on 缩写：v-on:写成@
-v-model
-…">
+<meta name="twitter:title" content="Vue之watch与样式绑定">
+<meta name="twitter:description" content="$watch
+用于观察 Vue 实例上的数据变动。
+当一些数据需要根据其他数据变化时，可以使用 $watch
+但是通常更好的办法是使用计算属性而不是一个命令式的$watch回调。1234567var vm = new Vue(&amp;#123;    el: &apos;&apos;,    data: &amp;#123; a: &apos;a1&apos; &amp;#125;&amp;#125;)vm.$watch(&apos;a&apos;,function(newval, o">
 
 
 
@@ -145,13 +130,13 @@ v-model
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/02/01/Vue指令和计算属性/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/02/02/Vue之watch与样式绑定/"/>
 
 
 
 
 
-  <title> Vue指令和计算属性 | 沉默の未来 </title>
+  <title> Vue之watch与样式绑定 | 沉默の未来 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -264,7 +249,7 @@ v-model
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/01/Vue指令和计算属性/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/02/Vue之watch与样式绑定/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="JF">
@@ -288,7 +273,7 @@ v-model
             
             
               
-                Vue指令和计算属性
+                Vue之watch与样式绑定
               
             
           </h1>
@@ -303,8 +288,8 @@ v-model
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-01T16:22:55+08:00">
-                2017-02-01
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-02T17:30:30+08:00">
+                2017-02-02
               </time>
             
 
@@ -361,31 +346,80 @@ v-model
       
 
       
-        <h2 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h2><p><code>v-</code>开头的都是指令</p>
-<ul>
-<li>v-bind 缩写：就是直接去掉v-bind，保留：和属性</li>
-<li>v-text | v-html</li>
-<li>v-if | v-else | v-else-if</li>
-<li>v-for</li>
-<li>v-on 缩写：v-on:写成@</li>
-<li>v-model</li>
-<li>…</li>
+        <h2 id="watch"><a href="#watch" class="headerlink" title="$watch"></a>$watch</h2><ul>
+<li>用于观察 Vue 实例上的数据变动。</li>
+<li>当一些数据需要根据其他数据变化时，可以使用 $watch</li>
+<li>但是通常更好的办法是使用计算属性而不是一个命令式的$watch回调。<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</div><div class="line">    <span class="attr">el</span>: <span class="string">''</span>,</div><div class="line">    <span class="attr">data</span>: &#123; <span class="attr">a</span>: <span class="string">'a1'</span> &#125;</div><div class="line">&#125;)</div><div class="line">vm.$watch(<span class="string">'a'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">newval, oldval</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(newval, oldval);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
 </ul>
-<a id="more"></a>
-<h2 id="计算属性"><a href="#计算属性" class="headerlink" title="计算属性"></a>计算属性</h2><ul>
-<li><p>为什么Vue.js将绑定表达式限制为一个表达式？</p>
-<ul>
-<li>在模板中表达式非常便利，但是它们实际上只用于简单的操作。</li>
-<li>模板是为了描述视图的结构。</li>
-<li>在模板中放入太多的逻辑会让模板过重且难以维护。</li>
+<h2 id="class-和-style-绑定"><a href="#class-和-style-绑定" class="headerlink" title="class 和 style 绑定"></a>class 和 style 绑定</h2><ul>
+<li>数据绑定一个常见需求是操作元素的 class 列表和它的内联样式。</li>
+<li>因为它们都是属性，我们可以用 v-bind 处理它们：<ul>
+<li>我们只需要计算出表达式最终的字符串</li>
+<li>不过字符串的拼接比较麻烦</li>
+<li>因此在 v-bind 用于 class 和 style 时，Vue.js 专门增强了它。</li>
+<li>表达式的结果类型除了字符串之外，还可以是对象或数组。</li>
 </ul>
 </li>
-<li><p>如果需要多于一个表达式的逻辑，应该使用计算属性。</p>
-  <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>a=&#123;&#123; a &#125;&#125;,b=&#123;&#123; b &#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-  <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">    <span class="attr">el</span>: <span class="string">''</span>,</div><div class="line">    <span class="attr">data</span>: &#123; <span class="attr">a</span>: <span class="number">1</span> &#125;,</div><div class="line">    <span class="attr">computed</span>: &#123; <span class="attr">b</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="keyword">return</span> <span class="keyword">this</span>.a + <span class="number">1</span> &#125; &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<li>可以使用 &#123;&#123; &#125;&#125; 绑定class<ul>
+<li>class=”“ </li>
+<li>不推荐使用上述方法</li>
+<li>容易和 v-bind:class 混用，推荐使用 v-bind</li>
+</ul>
 </li>
-<li><p>计算属性默认值是getter，不过在需要时你也可以提供一个setter</p>
-  <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">computed: &#123;</div><div class="line">    <span class="attr">b</span>: &#123;</div><div class="line">        <span class="attr">get</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="comment">// return </span></div><div class="line">        &#125;</div><div class="line">        set: <span class="function"><span class="keyword">function</span>(<span class="params"> newval </span>)</span>&#123;</div><div class="line">            <span class="comment">// ...</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="class外联式"><a href="#class外联式" class="headerlink" title="class外联式"></a>class外联式</h3><ul>
+<li><p>对象语法</p>
+<ul>
+<li><p>通过给 v-bind:class 传一个对象，动态地切换 class</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;static&quot; v-bind:class=&quot;&#123; &apos;classA&apos;:isA, &apos;classB&apos;:isB &#125;&quot;&gt;&lt;/div&gt;</div><div class="line">data:&#123;</div><div class="line">    isA: true,</div><div class="line">    isB: false</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>也可以直接绑定数据里的一个对象：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;div :class=&quot;classObj&quot;&gt;&lt;/div&gt;</div><div class="line">data:&#123;</div><div class="line">    classObj:&#123;</div><div class="line">        &apos;classA&apos;: true,</div><div class="line">        &apos;classB&apos;: false</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>数组语法</p>
+<ul>
+<li><p>可以把一个数组传给 v-bind:class </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;div :class=&quot;[classA, classB]&quot;&gt;&lt;/div&gt;</div><div class="line">data:&#123;</div><div class="line">    classA: &apos;class-a&apos;,</div><div class="line">    classB: &apos;class-b&apos;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>如果想根据条件切换列表中的 class，可以用三元表达式</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!--始终添加 classA，只有在isB是 true 时添加 classB--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">:class</span>=<span class="string">"[classA, isB ? classB : '']"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>新功能</p>
+<ul>
+<li>当多个条件 class 时，按上面的写法会比较繁琐</li>
+<li>在 1.0.19+ 中，可以在数组语法中使用对象语法：<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!--始终添加 classA，只有在isB是 true 时添加 classB--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">:class</span>=<span class="string">"[classA, &#123;classB: isB, classC: isC&#125;]"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="绑定内联样式"><a href="#绑定内联样式" class="headerlink" title="绑定内联样式"></a>绑定内联样式</h3><ul>
+<li><p>对象语法</p>
+<ul>
+<li>v-bind:style 的对象语法十分直观，看着非常像 css</li>
+<li><p>其实它是一个 JavaScript 对象。css 属性名可以用驼峰式或短横分隔命名：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;div :style=&quot;&#123; &apos;background-color&apos;: bgc, fontSize: fontSize + &apos;px&apos; &#125;&quot;&gt;&lt;/div&gt;</div><div class="line">data: &#123;</div><div class="line">    bgc: &apos;red&apos;,</div><div class="line">    fontSize: 20</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>直接绑定到一个样式对象通常更直观</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;div :style=&quot;styleObj&quot;&gt;&lt;/div&gt;</div><div class="line">data: &#123;</div><div class="line">    styleObj: &#123;</div><div class="line">        &apos;background-color&apos;: &apos;red&apos;,</div><div class="line">        fontSize: &apos;20px&apos;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>多重数组语法</p>
+<ul>
+<li>v-bind:style 的数组语法可以将多个样式对象应用到一个元素上：<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">:style</span>=<span class="string">"[styleObjA, styleObjB]"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>自动添加前缀</p>
+<ul>
+<li>当 v-bind:style 使用需要厂商前缀的 css 属性时，Vue.js 会自动侦测并添加相应的前缀。</li>
+</ul>
+</li>
 </ul>
 
       
@@ -426,9 +460,9 @@ v-model
       
         <div class="post-tags">
           
-            <a href="/tags/指令/" rel="tag"># 指令</a>
+            <a href="/tags/watch/" rel="tag"># watch</a>
           
-            <a href="/tags/计算属性/" rel="tag"># 计算属性</a>
+            <a href="/tags/class-和-style-绑定/" rel="tag"># class 和 style 绑定</a>
           
         </div>
       
@@ -437,8 +471,8 @@ v-model
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/01/31/Vue过滤器/" rel="next" title="Vue过滤器">
-                <i class="fa fa-chevron-left"></i> Vue过滤器
+              <a href="/2017/02/02/Vue之watch/" rel="next" title="Vue之watch">
+                <i class="fa fa-chevron-left"></i> Vue之watch
               </a>
             
           </div>
@@ -446,10 +480,6 @@ v-model
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/02/02/Vue之watch/" rel="prev" title="Vue之watch">
-                Vue之watch <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -572,7 +602,7 @@ v-model
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#指令"><span class="nav-number">1.</span> <span class="nav-text">指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计算属性"><span class="nav-number">2.</span> <span class="nav-text">计算属性</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#watch"><span class="nav-number">1.</span> <span class="nav-text">$watch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#class-和-style-绑定"><span class="nav-number">2.</span> <span class="nav-text">class 和 style 绑定</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#class外联式"><span class="nav-number">2.1.</span> <span class="nav-text">class外联式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#绑定内联样式"><span class="nav-number">2.2.</span> <span class="nav-text">绑定内联样式</span></a></li></ol></li></ol></div>
             
 
           </div>
