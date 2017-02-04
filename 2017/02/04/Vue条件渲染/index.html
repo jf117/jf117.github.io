@@ -100,7 +100,7 @@ v-if
 v-if 是一个指令，需要将它添加到一个元素上。
 12&amp;lt;h1 v-if=&quot;ok&quot;&amp;gt;yes&amp;lt;/h1&amp;gt;&amp;lt;h1 v-else&amp;gt;no&amp;lt;/h1&amp;gt;
 1234var vm = new Vue(&amp;#123;    el: &apos;&apos;,    data: &amp;#123; ok: true &amp;#125;&amp;#125;)">
-<meta property="og:updated_time" content="2017-02-04T08:30:33.512Z">
+<meta property="og:updated_time" content="2017-02-04T08:34:12.337Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue条件渲染">
 <meta name="twitter:description" content="条件渲染
@@ -366,8 +366,9 @@ v-if 是一个指令，需要将它添加到一个元素上。
 <ul>
 <li><p>template v-if</p>
 <ul>
-<li>如果想要切换多个元素，则可以把一个 <template> 元素当做包装元素，并在上面使用 v-if，最终的渲染结果不会包含它。<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">v-if</span>=<span class="string">"ok"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>title<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>content<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div></pre></td></tr></table></figure>
-</template></li>
+<li><p>如果想要切换多个元素，则可以把一个 <template> 元素当做包装元素，并在上面使用 v-if，最终的渲染结果不会包含它。</template></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">v-if</span>=<span class="string">"ok"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>title<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>content<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
 </ul>
 </li>
 <li><p>v-show</p>
