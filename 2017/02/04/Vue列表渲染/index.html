@@ -96,7 +96,7 @@
 基于一个数组渲染一个列表
 这个指令使用特殊的语法，形式为 item in items，items 是数据数组，item 是当前数组元素的别名
   123&amp;lt;ul id=&quot;example&quot;&amp;gt;    &amp;lt;li v-for=&quot;item in items&quot;&amp;gt;&amp;#123;&amp;#123; item.msg &amp;#125;&amp;#125;&amp;lt;/li&amp;gt;&amp;lt;/ul&amp;gt">
-<meta property="og:updated_time" content="2017-02-04T14:08:49.826Z">
+<meta property="og:updated_time" content="2017-02-04T14:27:13.622Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue列表渲染">
 <meta name="twitter:description" content="列表渲染v-for
@@ -360,16 +360,20 @@
 </li>
 </ul>
 <h3 id="template-v-for"><a href="#template-v-for" class="headerlink" title="template v-for"></a>template v-for</h3><ul>
-<li>可以将 v-for 用在 <template> 标签上，以渲染一个包含多个元素的块。<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">template</span> <span class="attr">v-for</span>=<span class="string">"item in items"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>&#123;&#123; item.name &#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>&#123;&#123; item.age &#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure>
-</template></li>
+<li>可以将 v-for 用在 <code>&lt;template&gt;</code> 标签上，以渲染一个包含多个元素的块。<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">template</span> <span class="attr">v-for</span>=<span class="string">"item in items"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>&#123;&#123; item.name &#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>&#123;&#123; item.age &#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
 </ul>
 <h3 id="数组变动检测"><a href="#数组变动检测" class="headerlink" title="数组变动检测"></a>数组变动检测</h3><ul>
-<li>变异方法<ul>
+<li><p>变异方法</p>
+<ul>
 <li>修改的是原数组</li>
-<li>使用<code>Vue实例化的对象.数据对象.方法</code><br>  |方法|作用|<br>  |–|–|<br>  |push()|向数组的末尾添加一个或更多元素，并返回新的长度|<br>  |pop()|用于删除并返回数组的最后一个元素|<br>  |shift()|删除并返回数组的第一个元素|<br>  |unshift()|向数组的开头添加一个或更多元素，并返回新的长度|<br>  |splice()|从某个已有的数组返回选定的元素|<br>  |sort()|对数组的元素进行排序|<br>  |reverse()|颠倒数组中元素的顺序|</li>
+<li><p>使用 <code>Vue实例化的对象.数据对象.方法</code></p>
+<p>  |方法|作用|<br>  |–|–|<br>  |push()|向数组的末尾添加一个或更多元素，并返回新的长度|<br>  |pop()|用于删除并返回数组的最后一个元素|<br>  |shift()|删除并返回数组的第一个元素|<br>  |unshift()|向数组的开头添加一个或更多元素，并返回新的长度|<br>  |splice()|从某个已有的数组返回选定的元素|<br>  |sort()|对数组的元素进行排序|<br>  |reverse()|颠倒数组中元素的顺序|</p>
+</li>
 </ul>
 </li>
-<li>替换数组<ul>
+<li><p>替换数组</p>
+<ul>
 <li>不会修改原数组，而是返回一个新数组</li>
 <li>在使用非变异方法时，可以直接用新数组替换就数组</li>
 <li>替换数组的方法有：filter(), concat(), slice()</li>
@@ -389,7 +393,8 @@
 </li>
 </ul>
 </li>
-<li>track-by $index<ul>
+<li><p>track-by $index</p>
+<ul>
 <li>如果没有唯一的键供追踪，可以使用 <code>track-by=&quot;$index&quot;</code>，它强制让 v-for 进入原位更新模式：片断不会被移动，而是简单地以对应索引的新值刷新。这种模式也能处理数据数组中重复的值。</li>
 <li>这让数据替换非常高效，但是也会付出一定的代价。因为这时 DOM 节点不再映射数组元素顺序的改变，不能同步临时状态（比如 <code>&lt;input&gt;</code> 元素的值）以及组件的私有状态。</li>
 <li>因此，如果 v-for 块包含 <code>&lt;input&gt;</code> 元素或子组件，要小心使用 <code>track-by=&quot;$index&quot;</code></li>
