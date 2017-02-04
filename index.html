@@ -238,6 +238,239 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/04/Vue列表渲染/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="JF">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/j.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="沉默の未来">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="沉默の未来" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/02/04/Vue列表渲染/" itemprop="url">
+                  Vue列表渲染
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-04T22:00:18+08:00">
+                2017-02-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="列表渲染"><a href="#列表渲染" class="headerlink" title="列表渲染"></a>列表渲染</h2><h3 id="v-for"><a href="#v-for" class="headerlink" title="v-for"></a>v-for</h3><ul>
+<li>基于一个数组渲染一个列表</li>
+<li><p>这个指令使用特殊的语法，形式为 item in items，items 是数据数组，item 是当前数组元素的别名</p>
+  <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"example"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"item in items"</span>&gt;</span>&#123;&#123; item.msg &#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> example = <span class="keyword">new</span> Vue(&#123;</div><div class="line"><span class="attr">el</span>: <span class="string">'example'</span>,</div><div class="line"><span class="attr">data</span>: &#123;</div><div class="line">    <span class="attr">items</span>: [&#123; <span class="attr">msg</span>: <span class="string">'foo'</span> &#125;,&#123; <span class="attr">msg</span>: <span class="string">'bar'</span> &#125;]</div><div class="line">&#125; </div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>可以为索引指定一个别名（如果 v-for 用于一个对象，则可以为对象的键指定一个别名）</p>
+  <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">"(idx, item) in items"</span>&gt;</span>&#123;&#123; idx &#125;&#125; &#123;&#123; item.msg &#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="comment">&lt;!--当没有指定索引的别名时，使用 $index--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">"item in items"</span>&gt;</span>&#123;&#123; $index &#125;&#125; &#123;&#123; item.msg &#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>从1.0.17版本开始就可以使用 of 分隔符，更接近 JavaScript 遍历器语法</p>
+  <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">"item of items"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="template-v-for"><a href="#template-v-for" class="headerlink" title="template v-for"></a>template v-for</h3><ul>
+<li>可以将 v-for 用在 <template> 标签上，以渲染一个包含多个元素的块。<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">template</span> <span class="attr">v-for</span>=<span class="string">"item in items"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>&#123;&#123; item.name &#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>&#123;&#123; item.age &#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure>
+</template></li>
+</ul>
+<h3 id="数组变动检测"><a href="#数组变动检测" class="headerlink" title="数组变动检测"></a>数组变动检测</h3><ul>
+<li>变异方法<ul>
+<li>修改的是原数组</li>
+<li>使用<code>Vue实例化的对象.数据对象.方法</code><br>  |方法|作用|<br>  |–|–|<br>  |push()|向数组的末尾添加一个或更多元素，并返回新的长度|<br>  |pop()|用于删除并返回数组的最后一个元素|<br>  |shift()|删除并返回数组的第一个元素|<br>  |unshift()|向数组的开头添加一个或更多元素，并返回新的长度|<br>  |splice()|从某个已有的数组返回选定的元素|<br>  |sort()|对数组的元素进行排序|<br>  |reverse()|颠倒数组中元素的顺序|</li>
+</ul>
+</li>
+<li>替换数组<ul>
+<li>不会修改原数组，而是返回一个新数组</li>
+<li>在使用非变异方法时，可以直接用新数组替换就数组</li>
+<li>替换数组的方法有：filter(), concat(), slice()</li>
+</ul>
+</li>
+<li><p>track-by</p>
+<ul>
+<li>因为 v-for 默认通过数据对象的特征来决定对已有作用域和 DOM 元素的复用程度，这可能导致重新渲染整个列表。</li>
+<li>但是，如果每个对象都有一个唯一 ID 的属性，便可以使用 track-by 特性给 Vue.js 一个提示，Vue.js 因而能尽可能地复用已有实例。</li>
+<li>如果 Vue.js 遇到一个包含 _uid: ‘88f869d’ 的新对象,它知道它可以复用这个已有对象的作用域与 DOM 元素。</li>
+<li>简单讲，就是 v-for 遍历 model 时，vue.js ，会建立索引键，这个键要求是不重复，不然会出错</li>
+<li>无track-by情况：数据修改时，无论值是否被修改，dom都被重新渲染（控制台可以看到 DOM 元素闪烁）</li>
+<li><p>加入track-by属性：数据修改时，不变数据所在的dom不被重新渲染，已改变的数据所在dom才被重新渲染</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">template</span> <span class="attr">v-for</span>=<span class="string">"item in items"</span> <span class="attr">track-by</span>=<span class="string">"_uid"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>&#123;&#123;$index&#125;&#125;.&#123;&#123; item._uid &#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p><a href="http://www.jb51.net/article/95777.htm" target="_blank" rel="external">参考</a></p>
+</li>
+</ul>
+</li>
+<li>track-by $index<ul>
+<li>如果没有唯一的键供追踪，可以使用 <code>track-by=&quot;$index&quot;</code>，它强制让 v-for 进入原位更新模式：片断不会被移动，而是简单地以对应索引的新值刷新。这种模式也能处理数据数组中重复的值。</li>
+<li>这让数据替换非常高效，但是也会付出一定的代价。因为这时 DOM 节点不再映射数组元素顺序的改变，不能同步临时状态（比如 <code>&lt;input&gt;</code> 元素的值）以及组件的私有状态。</li>
+<li>因此，如果 v-for 块包含 <code>&lt;input&gt;</code> 元素或子组件，要小心使用 <code>track-by=&quot;$index&quot;</code></li>
+<li>当我们的 model 的键值，是不重复时，可以用 model 的键值当 track-by</li>
+<li>使用 v-for 时我们会对组件产生很多的业务操作，vue.js 会将不重值的键值，作组件更换第一优先的复用参考，以加速组件的更换。</li>
+<li>如果你的 model ，不保证是否有重复值时，可以用 <code>track-by=&quot;$index&quot;</code></li>
+</ul>
+</li>
+<li><p>问题</p>
+<ul>
+<li>因为 JavaScript 的限制，Vue.js 不能检测到下面数组变化：<ol>
+<li>直接用索引设置元素，如：<code>vm.items[0] = {}</code></li>
+<li>修改数据的长度，如：<code>vm.items.length = 0</code></li>
+</ol>
+</li>
+<li><p>为了解决直接用索引设置元素的问题，Vue.js 扩展了观察数组，为它添加了一个 $set() 方法：</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//与 vm.items[0] = &#123;&#125; 相同，但是能触发视图更新</span></div><div class="line">example.items.$set(<span class="number">0</span>, &#123;<span class="attr">name</span>: <span class="string">'zs'</span>&#125;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>为了解决修改数据的长度的问题，只需要用一个空数组替换</p>
+</li>
+<li>除了 $set()，Vue.js 也为观察数组添加了 $remove() 方法，用于从目标数组中查找并删除元素。</li>
+</ul>
+</li>
+</ul>
+<h3 id="对象-v-for"><a href="#对象-v-for" class="headerlink" title="对象 v-for"></a>对象 v-for</h3><ul>
+<li><p>使用 v-for 遍历对象，除了 $index 之外，作用域内还可以访问另外一个特殊遍历 $key</p>
+  <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"example-1"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"repeat-object"</span> <span class="attr">class</span>=<span class="string">"demo"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"value in object"</span>&gt;</span>&#123;&#123; $key &#125;&#125; : &#123;&#123; value &#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</div><div class="line">    <span class="attr">el</span>: <span class="string">'#repeat-object'</span>,</div><div class="line">    <span class="attr">data</span>: &#123;</div><div class="line">        <span class="attr">object</span>: &#123;<span class="attr">name</span>: <span class="string">'John'</span>, <span class="attr">Age</span>: <span class="number">30</span>&#125;</div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>可以给对象的键提供一个别名</p>
+  <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">"(key, val) in obj"</span>&gt;</span>&#123;&#123; key &#125;&#125;&#123;&#123; val &#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="值域-v-for"><a href="#值域-v-for" class="headerlink" title="值域 v-for"></a>值域 v-for</h3><ul>
+<li>v-for 也可以接收一个整数，此时它将重复模板次数  <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">v-for</span>=<span class="string">"n in 10"</span>&gt;</span>&#123;&#123; n &#125;&#125; <span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="显示过滤-排序的结果"><a href="#显示过滤-排序的结果" class="headerlink" title="显示过滤/排序的结果"></a>显示过滤/排序的结果</h3><ul>
+<li>有时我们想显示过滤/排序过的数组，同时不实际修改或重置原始数据，有两个办法：<ol>
+<li>创建一个计算属性，返回过滤/排序过的数组</li>
+<li>使用内置的过滤器 filterBy 和orderBy</li>
+</ol>
+</li>
+</ul>
+<h3 id="v-for-在-2-0-版本修改"><a href="#v-for-在-2-0-版本修改" class="headerlink" title="v-for 在 2.0 版本修改"></a>v-for 在 2.0 版本修改</h3><ul>
+<li>key (替代 track-by)</li>
+<li>参数顺序更新：数组中使用(value, index) in arr，对象中使用(value, key, index) in obj</li>
+<li>$index和$key被丢弃</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/04/Vue条件渲染/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1566,159 +1799,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/10/CSS引入之link-import/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="JF">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/uploads/j.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="沉默の未来">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="沉默の未来" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/01/10/CSS引入之link-import/" itemprop="url">
-                  CSS引入之link/@import
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-10T21:56:08+08:00">
-                2017-01-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CSS/" itemprop="url" rel="index">
-                    <span itemprop="name">CSS</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="CSS引入方式"><a href="#CSS引入方式" class="headerlink" title="CSS引入方式"></a>CSS引入方式</h2><p>页面中使用CSS的方式主要有3种：</p>
-<ul>
-<li>行内式，行内添加定义style属性值</li>
-<li>内联，页面头部内嵌调用</li>
-<li>外联，外面链接调用<ul>
-<li>其中外面引用有两种：link和@import</li>
-</ul>
-</li>
-</ul>
-          <!--noindex-->
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/01/10/CSS引入之link-import/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1766,7 +1846,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1784,7 +1864,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">40</span>
+                <span class="site-state-item-count">41</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
