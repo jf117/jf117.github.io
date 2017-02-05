@@ -84,34 +84,22 @@
 
 
 
-<meta name="description" content="方法与事件处理方法处理器- 可以用 v-on 指令监听 DOM 事件
-- 在 methods 对象中定义方法
-    1&amp;lt;button @click=&quot;say&quot;&amp;gt;&amp;lt;/button&amp;gt;
-内联语句处理器- 通过给事件直接传参
-    1&amp;lt;button @click=&quot;say(&apos;hi&apos;)&quot;&amp;gt;&amp;lt;/button&amp;gt;
-
-    1&amp;lt;button @click=">
+<meta name="description" content="方法与事件处理方法处理器
+可以用 v-on 指令监听 DOM 事件
+在 methods 对象中定义方法  1&amp;lt;button @click=&quot;say&quot;&amp;gt;&amp;lt;/button&amp;gt;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vue方法与事件处理">
 <meta property="og:url" content="http://yoursite.com/2017/02/05/Vue方法与事件处理/index.html">
 <meta property="og:site_name" content="沉默の未来">
-<meta property="og:description" content="方法与事件处理方法处理器- 可以用 v-on 指令监听 DOM 事件
-- 在 methods 对象中定义方法
-    1&amp;lt;button @click=&quot;say&quot;&amp;gt;&amp;lt;/button&amp;gt;
-内联语句处理器- 通过给事件直接传参
-    1&amp;lt;button @click=&quot;say(&apos;hi&apos;)&quot;&amp;gt;&amp;lt;/button&amp;gt;
-
-    1&amp;lt;button @click=">
-<meta property="og:updated_time" content="2017-02-05T06:23:20.963Z">
+<meta property="og:description" content="方法与事件处理方法处理器
+可以用 v-on 指令监听 DOM 事件
+在 methods 对象中定义方法  1&amp;lt;button @click=&quot;say&quot;&amp;gt;&amp;lt;/button&amp;gt;">
+<meta property="og:updated_time" content="2017-02-05T06:26:16.714Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue方法与事件处理">
-<meta name="twitter:description" content="方法与事件处理方法处理器- 可以用 v-on 指令监听 DOM 事件
-- 在 methods 对象中定义方法
-    1&amp;lt;button @click=&quot;say&quot;&amp;gt;&amp;lt;/button&amp;gt;
-内联语句处理器- 通过给事件直接传参
-    1&amp;lt;button @click=&quot;say(&apos;hi&apos;)&quot;&amp;gt;&amp;lt;/button&amp;gt;
-
-    1&amp;lt;button @click=">
+<meta name="twitter:description" content="方法与事件处理方法处理器
+可以用 v-on 指令监听 DOM 事件
+在 methods 对象中定义方法  1&amp;lt;button @click=&quot;say&quot;&amp;gt;&amp;lt;/button&amp;gt;">
 
 
 
@@ -355,30 +343,42 @@
       
 
       
-        <h2 id="方法与事件处理"><a href="#方法与事件处理" class="headerlink" title="方法与事件处理"></a>方法与事件处理</h2><h3 id="方法处理器"><a href="#方法处理器" class="headerlink" title="方法处理器"></a>方法处理器</h3><pre><code>- 可以用 v-on 指令监听 DOM 事件
-- 在 methods 对象中定义方法
-    <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"say"</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></div></pre></td></tr></table></figure>
-</code></pre><h3 id="内联语句处理器"><a href="#内联语句处理器" class="headerlink" title="内联语句处理器"></a>内联语句处理器</h3><pre><code>- 通过给事件直接传参
-    <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"say('hi')"</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></div></pre></td></tr></table></figure>
+        <h2 id="方法与事件处理"><a href="#方法与事件处理" class="headerlink" title="方法与事件处理"></a>方法与事件处理</h2><h3 id="方法处理器"><a href="#方法处理器" class="headerlink" title="方法处理器"></a>方法处理器</h3><ul>
+<li>可以用 v-on 指令监听 DOM 事件</li>
+<li>在 methods 对象中定义方法  <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"say"</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<a id="more"></a>
+<h3 id="内联语句处理器"><a href="#内联语句处理器" class="headerlink" title="内联语句处理器"></a>内联语句处理器</h3><ul>
+<li><p>通过给事件直接传参</p>
+  <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"say('hi')"</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></div></pre></td></tr></table></figure>
+  <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"say('hi', $event)"</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="事件修饰器"><a href="#事件修饰器" class="headerlink" title="事件修饰器"></a>事件修饰器</h3><ul>
+<li>在事件处理器中经常需要调用 event.preventDefault() 或 event.stopPropagation()，尽管可以通过处理 DOM 事件做到，但是，让方法是纯粹的数据逻辑会更好</li>
+<li>为了解决这个问题，为 v-on 提供了两个事件修饰符<ol>
+<li>.prevent: <code>@click.prevent=&quot;fn&quot;</code></li>
+<li>.stop: <code>@click.stop=&quot;fn&quot;</code></li>
+</ol>
+</li>
+<li>1.0.16 版本中添加了两个额外的修饰符<ol>
+<li>添加事件侦听器时使用capture: <code>@click.capture=&quot;fn&quot;</code></li>
+<li>只对事件在元素本身(而不是子元素)触发时使用self: <code>@click.self=&quot;fn&quot;</code><h3 id="按键修饰器"><a href="#按键修饰器" class="headerlink" title="按键修饰器"></a>按键修饰器</h3></li>
+</ol>
+</li>
+<li>在监听键盘事件时，经常需要检测 keyCode，Vue 为 v-on 添加按键修饰符</li>
+<li><p>通过检测相应 keyCode 数字</p>
+  <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!--在keyCode为13时调用--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> @<span class="attr">keyup.13</span>=<span class="string">"fn"</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>按键修饰器别名：enter、tab、delete、esc、space、up、down、left、right等</p>
+</li>
+<li>之后又新增了单字母按键别名、自定义按键别名等<h3 id="为什么要在-HTML-中监听事件"><a href="#为什么要在-HTML-中监听事件" class="headerlink" title="为什么要在 HTML 中监听事件"></a>为什么要在 HTML 中监听事件</h3></li>
+<li>轻松定位在 JavaScript 代码里对应的方法</li>
+<li>无需在 JavaScript 里手动绑定事件，ViewModel 代码和 DOM 完全解耦</li>
+<li>当一个 ViewModel 被销毁，所有的事件处理器都会自动被删除，无需担心如何手动清理</li>
+</ul>
 
-    <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"say('hi', $event)"</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></div></pre></td></tr></table></figure>
-</code></pre><h3 id="事件修饰器"><a href="#事件修饰器" class="headerlink" title="事件修饰器"></a>事件修饰器</h3><pre><code>- 在事件处理器中经常需要调用 event.preventDefault() 或 event.stopPropagation()，尽管可以通过处理 DOM 事件做到，但是，让方法是纯粹的数据逻辑会更好
-- 为了解决这个问题，为 v-on 提供了两个事件修饰符
-    1. .prevent: `@click.prevent=&quot;fn&quot;`
-    2. .stop: `@click.stop=&quot;fn&quot;`
-- 1.0.16 版本中添加了两个额外的修饰符
-    1. 添加事件侦听器时使用capture: `@click.capture=&quot;fn&quot;`
-    2. 只对事件在元素本身(而不是子元素)触发时使用self: `@click.self=&quot;fn&quot;`
-</code></pre><h3 id="按键修饰器"><a href="#按键修饰器" class="headerlink" title="按键修饰器"></a>按键修饰器</h3><pre><code>- 在监听键盘事件时，经常需要检测 keyCode，Vue 为 v-on 添加按键修饰符
-- 通过检测相应 keyCode 数字
-    <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!--在keyCode为13时调用--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> @<span class="attr">keyup.13</span>=<span class="string">"fn"</span>&gt;</span></div></pre></td></tr></table></figure>
-
-- 按键修饰器别名：enter、tab、delete、esc、space、up、down、left、right等
-- 之后又新增了单字母按键别名、自定义按键别名等
-</code></pre><h3 id="为什么要在-HTML-中监听事件"><a href="#为什么要在-HTML-中监听事件" class="headerlink" title="为什么要在 HTML 中监听事件"></a>为什么要在 HTML 中监听事件</h3><pre><code>- 轻松定位在 JavaScript 代码里对应的方法
-- 无需在 JavaScript 里手动绑定事件，ViewModel 代码和 DOM 完全解耦
-- 当一个 ViewModel 被销毁，所有的事件处理器都会自动被删除，无需担心如何手动清理
-</code></pre>
       
     </div>
 
