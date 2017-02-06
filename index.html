@@ -317,56 +317,18 @@
 
       
         
-          
-            <h2 id="表单控件与绑定"><a href="#表单控件与绑定" class="headerlink" title="表单控件与绑定"></a>表单控件与绑定</h2><h3 id="基础用法"><a href="#基础用法" class="headerlink" title="基础用法"></a>基础用法</h3><ul>
+          <h2 id="表单控件与绑定"><a href="#表单控件与绑定" class="headerlink" title="表单控件与绑定"></a>表单控件与绑定</h2><h3 id="基础用法"><a href="#基础用法" class="headerlink" title="基础用法"></a>基础用法</h3><ul>
 <li>可以用 v-model 指令在表单控件元素上创建双向数据绑定。根据控件类型它自动选取正确的方法更新元素。</li>
 <li>一般与表单控件进行数据双向绑定，表单控件可使用的类型包括：<ul>
 <li>text： 双向绑定的值为输入表单的值</li>
-<li>checkbox: 双向绑定的值为 value 属性的值</li>
-<li>radio: 双向绑定的值为 value 属性的值</li>
-<li>select: 双向绑定的值为 value 属性的值  <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">v-model</span>=<span class="string">"selected"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">v-for</span>=<span class="string">"option in options"</span> <span class="attr">v-bind:value</span>=<span class="string">"option.value"</span>&gt;</span></div><div class="line">        &#123;&#123; option.text &#125;&#125;</div><div class="line">    <span class="tag">&lt;/<span class="name">option</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>Selected: &#123;&#123; selected &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">    <span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</div><div class="line">        <span class="attr">el</span>: <span class="string">''</span>,</div><div class="line">        <span class="attr">data</span>: &#123;</div><div class="line">            <span class="attr">selected</span>: <span class="string">'A'</span>,</div><div class="line">            <span class="attr">options</span>: [</div><div class="line">                &#123;<span class="attr">text</span>: <span class="string">'One'</span>,<span class="attr">value</span>: <span class="string">'A'</span>&#125;,</div><div class="line">                &#123;<span class="attr">text</span>: <span class="string">'Two'</span>,<span class="attr">value</span>: <span class="string">'B'</span>&#125;,</div><div class="line">                &#123;<span class="attr">text</span>: <span class="string">'Three'</span>,<span class="attr">value</span>: <span class="string">'C'</span>&#125;]</div><div class="line">        &#125;</div><div class="line">    &#125;)</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="绑定-value"><a href="#绑定-value" class="headerlink" title="绑定 value"></a>绑定 value</h3><ul>
-<li>对于单选按钮，勾选框及选择框选项， v-model 绑定的 value 通常是静态字符串</li>
-<li><p>但是有时我们想绑定的 value 到 Vue 实例的一个动态属性上，这时可以 v-bind 实现，并且这个属性的值可以不是字符串</p>
-<ul>
-<li><p>checkbox</p>
-  <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">v-model</span>=<span class="string">"toggle"</span> <span class="attr">v-bind:true-value</span>=<span class="string">"a"</span> <span class="attr">v-bind:false-value</span>=<span class="string">"b"</span>&gt;</span></div></pre></td></tr></table></figure>
-  <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</div><div class="line">    <span class="attr">el</span>: <span class="string">''</span>,</div><div class="line">    <span class="attr">data</span>: &#123;</div><div class="line">        <span class="attr">toggle</span>: <span class="string">''</span>,</div><div class="line">        <span class="attr">a</span>: <span class="string">'真'</span>,</div><div class="line">        <span class="attr">b</span>: <span class="string">'假'</span></div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-</li>
-<li><p>radio</p>
-  <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">v-model</span>=<span class="string">"pick"</span> <span class="attr">v-bind:value</span>=<span class="string">"a"</span>&gt;</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>select option</p>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="参数特性"><a href="#参数特性" class="headerlink" title="参数特性"></a>参数特性</h3><ul>
-<li><p>lazy</p>
-<ul>
-<li>在默认情况下， v-model 在 input 事件中同步输入框的值与数据，可以添加这个特性，从而改到在 change 事件中同步<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model.lazy</span>=<span class="string">"msg"</span> &gt;</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>number</p>
-<ul>
-<li>自动将用户的输入保持为数字<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model.number</span>=<span class="string">"msg"</span> &gt;</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>debounce</p>
-<ul>
-<li>设置最小延时，在每次敲击后延时同步输入框的值和数据。如果每次更新都要进行高耗操作(例如在输入提示中Ajax请求)</li>
-<li>debounce 参数不会延迟 input 事件，它延迟”写入”底层数据。因此在使用 debounce 时应当用 vm.$watch() 响应数据的变化。若想延迟 DOM 事件，应当使用 debounce 过滤器。<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">"msg"</span> <span class="attr">debounce</span>=<span class="string">"500"</span>&gt;</span></div></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ul>
-
-          
+<li>checkbox: 双向绑定的值为 value 属性的值
+          <!--noindex-->
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/02/06/Vue表单控件与绑定/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>

@@ -88,9 +88,7 @@
 可以用 v-model 指令在表单控件元素上创建双向数据绑定。根据控件类型它自动选取正确的方法更新元素。
 一般与表单控件进行数据双向绑定，表单控件可使用的类型包括：
 text： 双向绑定的值为输入表单的值
-checkbox: 双向绑定的值为 value 属性的值
-radio: 双向绑定的值为 value 属性的值
-select: 双向绑定的值为 value 属性的值  12">
+checkbox: 双向绑定的值为 value 属性的值">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vue表单控件与绑定">
 <meta property="og:url" content="http://yoursite.com/2017/02/06/Vue表单控件与绑定/index.html">
@@ -99,19 +97,15 @@ select: 双向绑定的值为 value 属性的值  12">
 可以用 v-model 指令在表单控件元素上创建双向数据绑定。根据控件类型它自动选取正确的方法更新元素。
 一般与表单控件进行数据双向绑定，表单控件可使用的类型包括：
 text： 双向绑定的值为输入表单的值
-checkbox: 双向绑定的值为 value 属性的值
-radio: 双向绑定的值为 value 属性的值
-select: 双向绑定的值为 value 属性的值  12">
-<meta property="og:updated_time" content="2017-02-06T02:13:59.000Z">
+checkbox: 双向绑定的值为 value 属性的值">
+<meta property="og:updated_time" content="2017-02-06T02:20:30.789Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue表单控件与绑定">
 <meta name="twitter:description" content="表单控件与绑定基础用法
 可以用 v-model 指令在表单控件元素上创建双向数据绑定。根据控件类型它自动选取正确的方法更新元素。
 一般与表单控件进行数据双向绑定，表单控件可使用的类型包括：
 text： 双向绑定的值为输入表单的值
-checkbox: 双向绑定的值为 value 属性的值
-radio: 双向绑定的值为 value 属性的值
-select: 双向绑定的值为 value 属性的值  12">
+checkbox: 双向绑定的值为 value 属性的值">
 
 
 
@@ -337,7 +331,7 @@ select: 双向绑定的值为 value 属性的值  12">
 <li>可以用 v-model 指令在表单控件元素上创建双向数据绑定。根据控件类型它自动选取正确的方法更新元素。</li>
 <li>一般与表单控件进行数据双向绑定，表单控件可使用的类型包括：<ul>
 <li>text： 双向绑定的值为输入表单的值</li>
-<li>checkbox: 双向绑定的值为 value 属性的值</li>
+<li>checkbox: 双向绑定的值为 value 属性的值<a id="more"></a></li>
 <li>radio: 双向绑定的值为 value 属性的值</li>
 <li>select: 双向绑定的值为 value 属性的值  <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">v-model</span>=<span class="string">"selected"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">v-for</span>=<span class="string">"option in options"</span> <span class="attr">v-bind:value</span>=<span class="string">"option.value"</span>&gt;</span></div><div class="line">        &#123;&#123; option.text &#125;&#125;</div><div class="line">    <span class="tag">&lt;/<span class="name">option</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>Selected: &#123;&#123; selected &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">    <span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</div><div class="line">        <span class="attr">el</span>: <span class="string">''</span>,</div><div class="line">        <span class="attr">data</span>: &#123;</div><div class="line">            <span class="attr">selected</span>: <span class="string">'A'</span>,</div><div class="line">            <span class="attr">options</span>: [</div><div class="line">                &#123;<span class="attr">text</span>: <span class="string">'One'</span>,<span class="attr">value</span>: <span class="string">'A'</span>&#125;,</div><div class="line">                &#123;<span class="attr">text</span>: <span class="string">'Two'</span>,<span class="attr">value</span>: <span class="string">'B'</span>&#125;,</div><div class="line">                &#123;<span class="attr">text</span>: <span class="string">'Three'</span>,<span class="attr">value</span>: <span class="string">'C'</span>&#125;]</div><div class="line">        &#125;</div><div class="line">    &#125;)</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
 </li>
